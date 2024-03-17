@@ -1,0 +1,29 @@
+.search-container {
+    flex: 0 0 80%; /* zauzima 80% širine roditelja */
+}
+
+.menu-container {
+    flex: 0 0 20%; /* zauzima 20% širine roditelja */
+}
+
+@media (max-width: 992px) {
+    .search-container, .menu-container {
+        flex: 0 0 100%; /* Na srednje i manje uređaje oba zauzimaju punu širinu */
+    }
+
+    .menu-container {
+        order: -1; /* Stavlja dropdown iznad pretrage na manjim uređajima */
+    }
+}
+
+/* Dodajte dodatne stilove za podešavanje položaja dropdown-a i formata pretrage kako želite */
+.dropdown {
+    text-align: center;
+}
+#myBtn {
+    width: 50%;
+    margin-top: 20px;
+}
+#searchResult {
+    text-align: center;
+}
