@@ -1,24 +1,27 @@
 .search-container {
-    flex: 0 0 80%; /* zauzima 80% širine roditelja */
+    flex: 0 0 80%; /* zauzima 80% sirine roditelja */
 }
 
 .menu-container {
-    flex: 0 0 20%; /* zauzima 20% širine roditelja */
+    flex: 0 0 20%; /* zauzima 20% sirine roditelja */
 }
 
 @media (max-width: 992px) {
     .search-container, .menu-container {
-        flex: 0 0 100%; /* Na srednje i manje uređaje oba zauzimaju punu širinu */
+        flex: 0 0 100%; /* Na srednje i manje uredjaje oba zauzimaju punu sirinu */
     }
 
     .menu-container {
-        order: -1; /* Stavlja dropdown iznad pretrage na manjim uređajima */
+        order: -1; /* Stavlja dropdown iznad pretrage na manjim uredjajima */
     }
 }
 
-/* Dodajte dodatne stilove za podešavanje položaja dropdown-a i formata pretrage kako želite */
-.dropdown {
+/* Dodajte dodatne stilove za podesavanje polozaja dropdown-a i formata pretrage kako zelite */
+.dropdown-menu {
     text-align: center;
+    height: 400px; 
+    width: calc(92% + 17px); /* 17px je prosecna sirina skrol bara */
+    overflow-y: auto;
 }
 #myBtn {
     width: 50%;
@@ -26,4 +29,11 @@
 }
 #searchResult {
     text-align: center;
+    padding-right: 250px;
+
+}
+.movies img {
+    width: 500px;
+    height: 600px;
+
 }
