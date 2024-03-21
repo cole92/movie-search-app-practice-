@@ -1,5 +1,5 @@
 // Fetch za dropDown.
-fetch('https://mocki.io/v1/d8539341-4585-4504-a64a-0bf55cfe684b')
+fetch('https://extendsclass.com/api/json-storage/bin/ecaedbf')
     .then(response => {
         if (!response.ok) {
             throw new Error (`Error: Api call failed with status ${response.status} and status text ${response.statusText}`)
@@ -11,7 +11,7 @@ fetch('https://mocki.io/v1/d8539341-4585-4504-a64a-0bf55cfe684b')
 
         data.forEach(movie => {
             const listItem = document.createElement('li');
-            listItem.textContent = movie.movie;
+            listItem.textContent = movie.naziv;
             dropDownMenu.appendChild(listItem);
         })
     })
@@ -40,7 +40,7 @@ document.getElementById('formx').addEventListener('submit', (e) => {
     const movieDiv = document.getElementById('searchResult');
     movieDiv.innerHTML = '<h2>Loading . . . </h2>' // Mini loader.
 
-    const movieApi = 'https://mocki.io/v1/d8539341-4585-4504-a64a-0bf55cfe684b' // Api
+    const movieApi = 'https://extendsclass.com/api/json-storage/bin/ecaedbf' // Api
     
     fetch(movieApi)
     .then(response => {
@@ -52,11 +52,11 @@ document.getElementById('formx').addEventListener('submit', (e) => {
     .then(data => {
         movieDiv.innerHTML = ''
         if (inputValue.length <= 1) {
-            alert('Please enter more than one character for search.') // Provera duzine karaktera.
+            alert('Molimo unesite vise od jednog karaktera za pretragu.') // Provera duzine karaktera.
             return;
         }
 
-        const filteredMovies = data.filter(movie => movie.movie.toLowerCase().includes(inputValue));
+        const filteredMovies = data.filter(movie => movie.naziv.toLowerCase().includes(inputValue));
 
         // Provera da li film postoji u api-u.
         if (filteredMovies.length === 0) {
@@ -65,11 +65,11 @@ document.getElementById('formx').addEventListener('submit', (e) => {
         } 
         filteredMovies.forEach(movie => {
             const movieElement = document.createElement('div');
+            movieElement.classList.add('movies')
             movieElement.innerHTML = `
-            <h1>Naslov: ${movie.movie}</h1>
-            <img src="${movie.image}" alt="${movie.movie}">
-            <h3>IMDB ocena: ${movie.rating}</h3>
-            <a href="${movie.imdb_url}" target="_blank">IMDb link</a>
+            <h1>Naslov: ${movie.naziv}</h1>
+            <img src="${movie.slika}" alt="${movie.naziv}">
+            <h3>Godina: ${movie.godina}</h3>
     `;
     movieDiv.appendChild(movieElement);
         })
