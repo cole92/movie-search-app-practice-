@@ -1,39 +1,99 @@
-.search-container {
-    flex: 0 0 80%; /* zauzima 80% sirine roditelja */
+/* Globalni stilovi */
+.container-fluid {
+    padding-top: 3rem; 
 }
-
+body {
+    background-color: #f8f8fa; 
+    font-family: 'Arial', sans-serif; 
+    color: #333; 
+}
+.movies h1 {
+    font-size: 1.75rem; 
+    margin-bottom: 0.5rem; 
+}
+.movies h3 {
+    font-size: 1.25rem; 
+    margin-top: 0.5rem; 
+}
+.search-container,
 .menu-container {
-    flex: 0 0 20%; /* zauzima 20% sirine roditelja */
+    margin-bottom: 1rem;
 }
 
-@media (max-width: 992px) {
-    .search-container, .menu-container {
-        flex: 0 0 100%; /* Na srednje i manje uredjaje oba zauzimaju punu sirinu */
-    }
-
-    .menu-container {
-        order: -1; /* Stavlja dropdown iznad pretrage na manjim uredjajima */
-    }
-}
-
-/* Dodajte dodatne stilove za podesavanje polozaja dropdown-a i formata pretrage kako zelite */
 .dropdown-menu {
-    text-align: center;
-    height: 400px; 
-    width: calc(92% + 17px); /* 17px je prosecna sirina skrol bara */
+    max-height: 400px;
     overflow-y: auto;
 }
-#myBtn {
-    width: 50%;
-    margin-top: 20px;
+
+/* Responzivni stilovi */
+@media (max-width: 992px) {
+    .search-container,
+    .menu-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #myBtn {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .movies img {
+        width: 100%;
+        height: auto;
+        border: none;
+    }
 }
 #searchResult {
     text-align: center;
-    padding-right: 250px;
-
 }
-.movies img {
-    width: 500px;
-    height: 600px;
 
+.movies {
+    border: solid black 2px;
+    margin-bottom: 1rem;
+}
+
+.movies img {
+    max-width: 500px;
+    height: 700px;
+    border: solid black 1px;
+    border-radius: 0.5rem;
+}
+
+
+.movies {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+
+.movies {
+    border-radius: 0.5rem;
+}
+
+/* Dodatni stilovi za centriranje i estetiku */
+#myBtn {
+    margin-top: 2rem;
+    padding: 0.5rem 6rem; 
+}
+@media (max-width: 576px) {
+    #myBtn {
+        padding: 0.5rem 4rem; 
+    }
+
+   
+    .movies h1 {
+        font-size: 1.5rem; 
+    }
+
+    .movies img {
+        width: 100%;
+        height: auto; 
+    }
+}
+
+
+.btn:hover {
+    transform: scale(1.05); 
 }
