@@ -26,7 +26,7 @@ fetch('https://extendsclass.com/api/json-storage/bin/ecaedbf')
         event.stopPropagation();
     })
 
-// Event listener
+    // Event listener
 document.getElementById('formx').addEventListener('submit', (e) => {
     e.preventDefault();
     const inputValue = document.getElementById('inputField').value.toLowerCase();
@@ -66,11 +66,17 @@ document.getElementById('formx').addEventListener('submit', (e) => {
         filteredMovies.forEach(movie => {
             const movieElement = document.createElement('div');
             movieElement.classList.add('movies')
+            movieElement.setAttribute('data-movie-id', movie._id); // Dodao filtriran ID kao atribut.
             movieElement.innerHTML = `
             <h1>Naslov: ${movie.naziv}</h1>
-            <img src="${movie.slika}" alt="${movie.naziv}">
+            <img src="${movie.slika}" alt="${movie.naziv}" style="cursor: pointer; width: 100%; height: auto;">
             <h3>Godina: ${movie.godina}</h3>
     `;
+        // Event listener na Div (movieElement) za novu stranicu.
+    movieElement.querySelector('img').addEventListener('click', () => {
+        window.location.href = `movie-details.html?movieId=${movie._id}`; // Putanja preko movieID.
+    });
+
     movieDiv.appendChild(movieElement);
         })
     })
