@@ -26,7 +26,7 @@ fetch('https://extendsclass.com/api/json-storage/bin/ecaedbf')
         event.stopPropagation();
     })
 
-    // Event listener
+    // Event listener na formu
 document.getElementById('formx').addEventListener('submit', (e) => {
     e.preventDefault();
     const inputValue = document.getElementById('inputField').value.toLowerCase();
