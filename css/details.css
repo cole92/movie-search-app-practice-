@@ -1,0 +1,29 @@
+#movieDetailsDiv h1, h3 {
+    text-align: center;
+}
+#movieDetailsDiv {
+    text-align: center; 
+}
+#movieDetailsDiv img {
+    width: 400px; 
+    height: 600px; 
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 10px;
+    border: solid black 2px;
+    display: inline-block; 
+    margin: 20px auto; 
+    text-align: center;
+}
+#movieDetailsDiv p {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    
+}
+
+
